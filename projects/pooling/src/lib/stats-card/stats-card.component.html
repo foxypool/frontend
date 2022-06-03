@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-card-title>
+    {{title}}
+    <mat-icon *ngIf="helpText" [matTooltip]="helpText!">info</mat-icon>
+  </mat-card-title>
+  <mat-card-content>
+    <ng-content></ng-content>
+  </mat-card-content>
+</mat-card>
