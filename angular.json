@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "pooling": {
+      "projectType": "library",
+      "root": "projects/pooling",
+      "sourceRoot": "projects/pooling/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/pooling/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/pooling/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/pooling/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/pooling/src/test.ts",
+            "tsConfig": "projects/pooling/tsconfig.spec.json",
+            "karmaConfig": "projects/pooling/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }
